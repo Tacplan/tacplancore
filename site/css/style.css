@@ -4,7 +4,7 @@ body {
   font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 21px;
   font-weight: 300;
-  color: #ddd;
+  color: #000;
   background: #fff;
   border-top: 5px solid #fc0;
   box-shadow: inset 0 3px 30px rgba(0,0,0,.3);
@@ -13,7 +13,7 @@ body {
 
 /* Sections */
 
-body > header, body > section, body > sidebar, body > footer {
+body > header, body > section, body > footer {
   float: left;
   width: 100%;
   clear: both;
@@ -81,10 +81,6 @@ nav li.current a {
   box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 1px 5px rgba(0,0,0,.5);
   text-shadow: 0 1px 0 rgba(255,255,255,.3);
 }
-
-/* Sidebar */
-
-
 
 /* Footer */
 
