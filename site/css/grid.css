@@ -34,6 +34,11 @@
   width: 306px;
 }
 .grid5 {
+  height: 114px;
+  background: #fc0;
+  font-size: 16px;
+  color: #888;
+  margin-top: 40px;
   margin-bottom: 15px;
   width: 100%;
 }
