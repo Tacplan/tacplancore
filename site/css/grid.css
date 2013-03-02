@@ -43,8 +43,9 @@
   width: 100%;
 }
 .grid6 {
-  margin-top: 150;
   float:right;
+  clear:right; 
+  margin-top: -200px;
   width: 222px;
 }
 .grid7 {
