@@ -13,7 +13,7 @@ body {
 
 /* Sections */
 
-body > header, body > section{
+body > header, body > section, body > footer{
   float: left;
   width: 100%;
   clear: both;
@@ -42,7 +42,9 @@ body > header h1 span {
 }
 
 /* Footer */
-
+body > footer {
+  
+}
 
 /* Navigation */
 
