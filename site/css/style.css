@@ -1,4 +1,4 @@
-/* Base */
+﻿/* Base */
 
 body {
   font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -207,7 +207,7 @@ body > footer .align-right img {
 
 .quickstart .code {
   display: block;
-  background: #3d3d3d;
+  background: #FFFFFF;
   border-radius: 5px;
   font-family: Menlo, Consolas, "Courier New", Courier, "Liberation Mono", monospace;
   line-height: 1.3em;
