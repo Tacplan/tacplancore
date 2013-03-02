@@ -96,16 +96,6 @@ body > footer a {
   color: #fff;
 }
 
-body > footer .align-right p, body > footer .align-right {
-  display: inline-block;
-}
-
-body > footer .align-right {
-  position: absolute;
-  bottom: 14px;
-  margin-left: 5px;
-}
-
 /* Utilities */
 
 .align-left {
