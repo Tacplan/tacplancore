@@ -46,7 +46,7 @@ body > footer {
 }
 
 body > footer .content {
-  padding: 5;
+  padding: -5;
 }
 
 body > footer h1 img {
@@ -125,7 +125,7 @@ nav li.current a {
 }
 
 .features .content {
-  padding: 10px 0 20px;
+  padding: 0 0 0;
 }
 
 .quickstart {
