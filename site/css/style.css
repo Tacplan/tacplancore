@@ -18,10 +18,6 @@ body > header, body > section, body > footer{
   clear: both;
 }
 
-.content {
-  padding: 10px 0;
-}
-
 /* Header */
 
 body > header {
@@ -42,19 +38,12 @@ body > header h1 span {
 
 /* Footer */
 body > footer {
-
 }
-
 body > footer .content {
-
 }
-
 body > footer h1 img {
-
 }
-
 body > footer h1 span {
-
 }
 
 /* Navigation */
