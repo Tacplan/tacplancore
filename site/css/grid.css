@@ -17,16 +17,17 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */
 }
 .grid4, .grid6, .grid7, .grid8, .grid9, .grid10, .grid11 {
-  float: left;
   display: inline;
   margin-left: 30px;
 }
 .grid2 {
   z-index: 1;
+  margin-left: 30px;
   height: 114px;
   width: 378px;
 }
 .grid3 {
+  margin-left: 30px;
   width: 474px;
 }
 .grid4 {
