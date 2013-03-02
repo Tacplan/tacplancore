@@ -3,7 +3,7 @@
   margin: 0 auto;
 }
 .grid1 {
-  z-index:-1;
+  z-index: -1;
   position: absolute;
   margin-top: 15px;
   height: 114px;
@@ -34,12 +34,13 @@
   width: 306px;
 }
 .grid5 {
+  z-index: -1;
+  position: absolute;
   height: 114px;
   background: #fc0;
   font-size: 16px;
   color: #888;
-  margin-top: 40px;
-  margin-bottom: 15px;
+  bottom: 15px;
   width: 100%;
 }
 .grid6 {
