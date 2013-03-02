@@ -6,7 +6,7 @@
   z-index:-1;
   position: absolute;
   margin-top: 10px;
-  height: 80px;
+  height: 114px;
   width: 100%;
   background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
@@ -23,10 +23,11 @@
 }
 .grid2 {
   z-index: 1;
-  width: 378px;
+  height: 114px;
+  width: 306px;
 }
 .grid3 {
-  width: 474px;
+  width: 306px;
 }
 .grid4 {
   width: 306px;
