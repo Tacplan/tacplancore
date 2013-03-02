@@ -19,7 +19,7 @@ body > header, body > section, body > footer{
 }
 
 .content {
-  padding: 15px 0;
+  padding: 10px 0;
 }
 
 /* Header */
@@ -46,7 +46,7 @@ body > footer {
 }
 
 body > footer .content {
-  padding: 0;
+  padding: 5;
 }
 
 body > footer h1 img {
@@ -125,7 +125,7 @@ nav li.current a {
 }
 
 .features .content {
-  padding: 20px 0 10px;
+  padding: 10px 0 20px;
 }
 
 .quickstart {
