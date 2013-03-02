@@ -23,12 +23,16 @@
 }
 .grid2 {
   z-index: 1;
+  float: left;
+  display: inline;
   width: 378px;
   margin-left: 30px;
 }
 .grid3 {
-width: 474px;
-margin-left: 30px;
+  float: left;
+  display: inline;
+  width: 474px;
+  margin-left: 30px;
 }
 .grid4 {
   width: 306px;
