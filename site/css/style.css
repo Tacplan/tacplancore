@@ -7,7 +7,6 @@ body {
   color: #000;
   background: #fff;
   border-top: 5px solid #a79c8d;
-  border-bottom: 5px solid #a79c8d;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
@@ -20,7 +19,7 @@ body > header, body > section, body > footer{
 }
 
 .content {
-  padding: 20px 0;
+  padding: 15px 0;
 }
 
 /* Header */
