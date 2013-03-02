@@ -2,7 +2,7 @@
   width: 978px;
   margin: 0 auto;
 }
-.grid1, .grid2, .grid3, .grid4, .grid5, .grid6, .grid7, .grid8, .grid9, .grid10, .grid11 {
+.grid1, .grid2, .grid4, .grid5, .grid6, .grid7, .grid8, .grid9, .grid10, .grid11 {
   float: left;
   display: inline;
   margin-left: 30px;
@@ -15,6 +15,9 @@
 }
 .grid3 {
   width: 222px;
+  float: left;
+  display: inline;
+  margin-left: 60px;
 }
 .grid4 {
   width: 306px;
