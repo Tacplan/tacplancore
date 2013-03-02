@@ -22,12 +22,14 @@
 }
 .grid2 {
   z-index: 1;
+  margin-top: 15px;
   margin-left: 30px;
   height: 114px;
   width: 378px;
 }
 .grid3 {
   margin-left: 30px;
+  margin-bottom: 20px;
   width: 474px;
 }
 .grid4 {
