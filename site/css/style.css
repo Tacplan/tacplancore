@@ -41,7 +41,8 @@ body > footer h1 span {
 /* Navigation */
 
 nav {
-  margin-top: 55px;
+  margin-top: 25px;
+  margin-bottom: 35px;
 }
 
 nav ul {
