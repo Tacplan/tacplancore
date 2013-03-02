@@ -101,8 +101,8 @@ body > footer .align-right p, body > footer .align-right img {
 }
 
 body > footer .align-right img {
-  position: relative;
-  top: 14px;
+  position: absolute;
+  bottom: 14px;
   margin-left: 5px;
 }
 
