@@ -2,6 +2,12 @@
   width: 650px;
   margin: 5px 160px;
 }
+
+.maingrid {
+  margin-bottom: 15px;
+}
+
+}
 .grid1 {
   z-index: -1;
   position: absolute;
