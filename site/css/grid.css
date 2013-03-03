@@ -1,3 +1,12 @@
+#wrap {
+  min-height: 100%;
+}
+
+#mbody {
+  overflow:auto;
+  padding-bottom: 20px;
+  }  /* must be same height as the footer */
+
 .content {
   width: 650px;
   margin: 5px 160px;
@@ -37,26 +46,22 @@
   background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */
 }
-
 .grid7, .grid8, .grid9, .grid10, .grid11 {
   display: inline;
 }
-
 .grid2 {
   z-index: 1;
   margin-top: 15px;
   height: 114px;
   width: 378px;
 }
-
 .grid3 {
   width: 474px;
 }
-
 .grid4 {
   
 }
-.footer {
+#footer {
   position: relative;
   margin-top: -20px; /* negative value of footer height */
   height: 20px;
