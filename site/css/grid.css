@@ -10,12 +10,15 @@
 }
 
 .post_content {
+  padding: 5px;
   float:left;
   width:650px;
   border: 1px solid gray;
 }
 
 .sidebar_content {
+  margin-left: 5px;
+  padding: 5px;
   float:right;
   width:300px;
   border: 1px solid gray;
