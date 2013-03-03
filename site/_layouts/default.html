@@ -1,9 +1,17 @@
 {% include top.html %}
 
 <body>
-  {% include header.html %}
-
-  {{ content }}
+	<!--[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	</style>
+<![endif]-->
+	<div id="wrap">
+      {% include header.html %}
+      <div id="mbody">
+        {{ content }}
+      </div>
+    </div>
   
   {% include footer.html %}
 

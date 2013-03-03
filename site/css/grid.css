@@ -1,3 +1,8 @@
+#wrap {min-height: 100%;}
+
+#mbody {overflow:auto;
+  padding-bottom: 150px;}  /* must be same height as the footer */
+
 .content {
   width: 650px;
   margin: 5px 160px;
@@ -52,14 +57,26 @@
 .grid4 {
   
 }
-.grid5 {
-  height: 4em;
+#footer {position: relative;
+  margin-top: -150px; /* negative value of footer height */
+  height: 150px;
+  clear:both; 
   background: #3d3d3d;
   font-size: 16px;
   color: #888;
   width: 100%;
   clear: both;
 }
+
+/*Opera Fix*/
+body:before {
+  content:"";
+  height:100%;
+  float:left;
+  width:0;
+  margin-top:-32767px;/
+}
+
 .grid6 {
 
 }
