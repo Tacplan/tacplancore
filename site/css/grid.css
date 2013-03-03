@@ -4,7 +4,7 @@
 }
 
 .maingrid {
-  margin-left: 160px;
+  margin: 5px 160px;
   width:755px;
   margin:0 auto;
   border: 1px solid gray;
