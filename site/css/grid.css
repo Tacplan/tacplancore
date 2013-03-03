@@ -11,6 +11,17 @@
 }
 
 .sidebar_content {
+  padding:10px;
+  float:left;
+  width:500px;
+  border: 1px solid gray;
+}
+
+.post_content {
+  padding:10px;
+  float:left;
+  width:250px;
+  border: 1px solid gray;
 }
 
 }
@@ -41,10 +52,7 @@
   width: 474px;
 }
 .grid4 {
-  padding:10px;
-  float:left;
-  width:500px;
-  border: 1px solid gray;
+  
 }
 .grid5 {
   z-index: -1;
@@ -57,10 +65,7 @@
   width: 100%;
 }
 .grid6 {
-  padding:10px;
-  float:left;
-  width:250px;
-  border: 1px solid gray;
+
 }
 .grid7 {
   width: 558px;
