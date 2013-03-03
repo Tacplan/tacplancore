@@ -53,12 +53,9 @@
   
 }
 .grid5 {
-
-  clear: both;
   position: absolute;
   left: 0;
   bottom: 0;
-  z-index: 10;
   height: 20;
   margin-top: 20;
   background: #3d3d3d;
