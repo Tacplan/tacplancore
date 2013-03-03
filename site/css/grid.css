@@ -5,7 +5,7 @@
 
 .maingrid {
   margin: 0px 160px;
-  width:955px;
+  width:965px;
   margin:0 auto;
 }
 
@@ -17,7 +17,6 @@
 }
 
 .sidebar_content {
-  margin-left: 5px;
   padding: 5px;
   float:right;
   width:300px;
