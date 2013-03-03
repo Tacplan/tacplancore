@@ -8,6 +8,10 @@ body {
   background: #fff;
   border-top: 5px solid #a79c8d;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
 }
 
 /* Sections */
