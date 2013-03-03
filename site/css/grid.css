@@ -38,7 +38,7 @@
 }
 .grid4 {
   position: relative;
-  width: 306px;
+  width: 150px;
 }
 .grid5 {
   z-index: -1;
@@ -52,8 +52,8 @@
 }
 .grid6 {
   position: relative;
-  left: 306px;
-  width: 222px;
+  left: 150px;
+  width: 150px;
 }
 .grid7 {
   width: 558px;
