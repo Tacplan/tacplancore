@@ -4,22 +4,21 @@
 }
 
 .maingrid {
-  top: 150px;
   margin-left: 160px;
   width:750px;
   margin:0 auto;
-  background: fff;
+  border: 1px solid gray;
 }
 
 .post_content {
-  padding:10px;
+  
   float:left;
   width:500px;
-  background: fc0;
+  border: 1px solid gray;
 }
 
 .sidebar_content {
-  padding:10px;
+  
   float:right;
   width:250px;
   border: 1px solid gray;
