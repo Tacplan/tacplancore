@@ -6,7 +6,6 @@
 .maingrid {
   width:750px;
   margin:0 auto;
-  background:#99c;
   border: 1px solid gray;
 }
 
@@ -43,7 +42,6 @@
 .grid4 {
   float:left;
   width:500px;
-  background:#9c9;
   border: 1px solid gray;
 }
 .grid5 {
@@ -59,7 +57,6 @@
 .grid6 {
   float:left;
   width:250px;
-  background:#9c9;
   border: 1px solid gray;
 }
 .grid7 {
