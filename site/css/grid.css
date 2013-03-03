@@ -12,14 +12,14 @@
 .post_content {
   float:left;
   width:650px;
-  border: 1px solid gray;
+  
 }
 
 .sidebar_content {
-  padding-left: 5px;
+  padding-left: 15px;
   float:right;
   width:300px;
-  border: 1px solid gray;
+  
 }
 
 }
