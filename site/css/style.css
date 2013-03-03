@@ -236,10 +236,6 @@ article h6 {
   margin: 1em 0;
 }
 
-article h4 {
-  color: #000;
-}
-
 h5, h6 {
   font-size: 1em;
 }
@@ -265,6 +261,101 @@ blockquote {
   font-weight: 500;
 }
 
+article {
+    padding: 1.0em 0.0em 1.0em 0.0em;
+  border-bottom: 1px solid #000;
+}
+
+.article_title {
+
+}
+
+header .dateline {
+  color: #000;
+  padding: 0em;
+  margin: 0;
+}
+
+article_body {
+  border-bottom: 1px solid #ddd;
+}
+
+article pre {
+  border: 1px solid #ddd;
+  padding: 0 0.4em;
+}
+
+article blockquote {
+  font-size: 0.91em;
+    font-style: italic;
+  padding: 0.5em 1.5em;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+article code {
+  font-size: 0.91em;
+  font-family: Menlo, Monaco, Consolas, monospace;
+  padding: 0 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+article pre.code {
+  border: 1px solid #ddd;
+  background-color: #eef;
+}
+
+article pre code {
+  border: none;
+  font-weight: normal;
+}
+
+article pre.terminal {
+  border: 1px solid black;
+  background-color: #333;
+  color: white;
+}
+
+article pre.terminal code {
+  background-color: #333;
+}
+
+article .video {
+    text-align: center;
+
+}
+article .video-title {
+    font-weight: bold;
+}
+
+article .video-note {
+  font-style: italic;
+}
+
+/*--------------------------------------------------------------
+ Archive
+ --------------------------------------------------------------*/
+
+#archive {
+    border-bottom: 1px solid #ddd;
+    padding-top: 1.0em;
+}
+
+#archive article {
+    padding: 0 0 1em 0;
+    margin: 0;
+    border-bottom: none;
+}
+
+#archive header {
+    padding: 0;
+}
+
+#archive article p {
+    padding: 0em;
+    margin: 0em;
+}
 
 /* Tables */
 
