@@ -1,20 +1,3 @@
-#wrapper {
-margin: 0 auto;
-width: 1000px;
-}
-
-#content {
-float: left;
-background: #FFFFFF;
-width: 850px;
-}
-
-#rightcolumn {
-background: #CC33FF;
-width: 150px;
-float: left;
-}
-
 .content {
   width: 650px;
   margin: 5px 160px;
@@ -27,19 +10,15 @@ float: left;
 }
 
 .post_content {
-  margin: 10;
-  padding: 10px;
+  padding-right: 20px;
   float:left;
   width:630px;
-  
 }
 
 .sidebar_content {
-  margin: 10;
-  padding: 10px;
+  padding-left: 20px;
   float:right;
   width:280px;
-  
 }
 
 }
