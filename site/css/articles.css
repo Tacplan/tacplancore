@@ -7,6 +7,10 @@ article {
 	border-bottom: 1px solid #ddd;
 }
 
+article_body {
+	border-bottom: 1px solid #ddd
+}
+
 article pre {
 	border: 1px solid #ddd;
 	background-color: #eef;
