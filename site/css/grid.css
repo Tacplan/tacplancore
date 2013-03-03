@@ -4,10 +4,9 @@
 }
 
 .maingrid {
-  position: absolute;
-  margin-left: 160px;
-  margin-top: 150px;
-  margin-bottom: 15px;
+  width:750px;
+  margin:0 auto;
+  background:#99c;
   border: 1px solid gray;
 }
 
@@ -39,7 +38,9 @@
   width: 474px;
 }
 .grid4 {
-  width: 150px;
+  float:left;
+  width:500px;
+  background:#9c9;
   border: 1px solid gray;
 }
 .grid5 {
@@ -53,9 +54,9 @@
   width: 100%;
 }
 .grid6 {
-  position: relative;
-  left: 150px;
-  width: 150px;
+  float:left;
+  width:250px;
+  background:#9c9;
   border: 1px solid gray;
 }
 .grid7 {
