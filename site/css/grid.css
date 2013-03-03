@@ -4,6 +4,7 @@
 }
 
 .maingrid {
+  z-index: -2;
   margin: 0px 160px;
   width:1000px;
   margin:0 auto;
@@ -23,7 +24,7 @@
 
 }
 .grid1 {
-
+  z-index: -1;
   position: absolute;
   margin-top: 15px;
   height: 110px;
