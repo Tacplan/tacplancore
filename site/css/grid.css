@@ -53,11 +53,7 @@
   
 }
 .grid5 {
-  position: absolute;
-  left: 0;
-  bottom: 0;
   height: 20;
-  margin-top: 20;
   background: #3d3d3d;
   font-size: 16px;
   color: #888;
