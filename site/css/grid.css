@@ -6,14 +6,14 @@
 .maingrid {
   z-index: -2;
   margin: 0px 160px;
-  width:1000px;
+  width:1200px;
   margin:0 auto;
 }
 
 .post_content {
   padding-right: 40px;
   float:left;
-  width:630px;
+  width:730px;
 }
 
 .sidebar_content {
