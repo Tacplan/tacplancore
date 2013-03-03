@@ -4,21 +4,20 @@
 }
 
 .maingrid {
-  margin: 5px 160px;
-  width:755px;
+  margin: 0px 160px;
+  width:955px;
   margin:0 auto;
-  border: 1px solid gray;
 }
 
 .post_content {
   float:left;
-  width:500px;
+  width:650px;
   border: 1px solid gray;
 }
 
 .sidebar_content {
   float:right;
-  width:250px;
+  width:300px;
   border: 1px solid gray;
 }
 
