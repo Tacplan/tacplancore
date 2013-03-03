@@ -8,14 +8,14 @@
   margin-left: 160px;
   width:750px;
   margin:0 auto;
-  border: 1px solid gray;
+  background: fff;
 }
 
 .post_content {
   padding:10px;
   float:left;
   width:500px;
-  border: 1px solid gray;
+  background: fc0;
 }
 
 .sidebar_content {
