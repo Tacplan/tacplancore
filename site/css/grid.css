@@ -36,6 +36,7 @@
   width: 474px;
 }
 .grid4 {
+  position: relative;
   width: 306px;
 }
 .grid5 {
@@ -49,6 +50,7 @@
   width: 100%;
 }
 .grid6 {
+  position: relative;
   left: 306px;
   width: 222px;
 }
