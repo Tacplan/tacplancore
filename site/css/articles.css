@@ -7,6 +7,17 @@ article {
 	border-bottom: 1px solid #ddd;
 }
 
+.article_title {
+
+}
+
+header .dateline {
+	font-size: 1.0em;
+	color: #aaa;
+	padding: 0em;
+	margin: 0;
+}
+
 .article_body {
 	border-bottom: 1px solid #ddd;
 }
@@ -88,4 +99,28 @@ article .video-title {
 
 article .video-note {
 	font-style: italic;
+}
+
+/*--------------------------------------------------------------
+ Archive
+ --------------------------------------------------------------*/
+
+#archive {
+    border-bottom: 1px solid #ddd;
+    padding-top: 1.0em;
+}
+
+#archive article {
+    padding: 0 0 1em 0;
+    margin: 0;
+    border-bottom: none;
+}
+
+#archive header {
+    padding: 0;
+}
+
+#archive article p {
+    padding: 0em;
+    margin: 0em;
 }
