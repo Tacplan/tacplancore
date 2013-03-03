@@ -167,7 +167,6 @@ nav li.current a {
 
 /* Code Highlighting */
 
-
 pre, code {
   white-space: pre;
   display: inline-block;
@@ -238,12 +237,11 @@ article h6 {
 }
 
 article h4 {
-  color: #fff;
+  color: #000;
 }
 
 h5, h6 {
   font-size: 1em;
-  font-style: italic;
 }
 
 article ul li p {
