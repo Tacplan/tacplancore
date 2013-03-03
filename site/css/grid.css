@@ -53,8 +53,8 @@
   
 }
 .grid5 {
-  z-index: -1;
-  position: absolute;
+
+  float: bottom;
   height: 50px;
   background: #3d3d3d;
   font-size: 16px;
