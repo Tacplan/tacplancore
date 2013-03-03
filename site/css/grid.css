@@ -54,12 +54,14 @@
 }
 .grid5 {
 
-  float: bottom;
-  height: 50px;
+  clear: both;
+  position: relative;
+  z-index: 10;
+  height: 3em;
+  margin-top: -3em;
   background: #3d3d3d;
   font-size: 16px;
   color: #888;
-  bottom: 10px;
   width: 100%;
 }
 .grid6 {
