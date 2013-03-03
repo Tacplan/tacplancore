@@ -4,9 +4,9 @@
 }
 
 .maingrid {
-  z-index: -2;
-  margin: 0px 160px;
-  width:1200px;
+  position: absolute;
+  left: 160px;
+  width:1100px;
   margin:0 auto;
 }
 
