@@ -5,20 +5,21 @@
 
 .maingrid {
   margin: 0px 160px;
-  width:965px;
+  width:900px;
   margin:0 auto;
 }
 
 .post_content {
+  padding: 10px;
   float:left;
-  width:650px;
+  width:630px;
   
 }
 
 .sidebar_content {
-  padding-left: 15px;
+  padding: 10px;
   float:right;
-  width:300px;
+  width:280px;
   
 }
 
