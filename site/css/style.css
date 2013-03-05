@@ -12,7 +12,7 @@ body {
 
 /* Sections */
 
-body > header, body > section, body > footer{
+body > header, body > section{
   float: left;
   width: 100%;
 
@@ -26,16 +26,6 @@ body > header .content {
 body > header h1 img {
 }
 body > header h1 span {
-}
-
-/* Footer */
-body > footer {
-}
-body > footer .content {
-}
-body > footer h1 img {
-}
-body > footer h1 span {
 }
 
 /*--------------------------------------------------------------
@@ -57,16 +47,12 @@ footer {
 footer a,
 footer a:link,
 footer a:visited {
-  color: #aaa;
 }
 
 footer #copyright {
-  color: #aaa;
-  text-align: left;
 }
 
 footer #copyright a {
-  color: #aaa;
 }
 
 
