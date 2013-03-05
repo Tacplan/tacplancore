@@ -236,8 +236,12 @@ article h6 {
   margin-top: 1em 0;
 }
 
-h5, h6 {
+article h5{
   font-size: 1em;
+}
+
+article h6{
+  font-weight: normal;
 }
 
 article ul li p {
@@ -262,7 +266,7 @@ blockquote {
 }
 
 article {
-    padding: 1.0em 0.0em 1.0em 0.0em;
+    padding: 2.0em 0.0em 2.0em 0.0em;
   border-bottom: 1px solid #000;
 }
 
