@@ -7,7 +7,7 @@ module Jekyll
     end
 
     def render(context)
-      "#{@text} #{time.strftime("%Y-%m-%d %H:%M")}"
+      "#{@text} #{Time.now}"
     end
   end
 end
