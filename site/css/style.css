@@ -38,6 +38,35 @@ body > footer h1 img {
 body > footer h1 span {
 }
 
+/*--------------------------------------------------------------
+ Footer
+ --------------------------------------------------------------*/
+footer {
+  font-size: 0.91em;
+  color: darkgrey;
+  overflow: hidden;
+  clear: both;
+  text-align: left;
+  padding: 1em 0em 1em 0em;
+  line-height: 0.5em;
+}
+
+footer a,
+footer a:link,
+footer a:visited {
+  color: #aaa;
+}
+
+footer #copyright {
+  color: #aaa;
+  text-align: left;
+}
+
+footer #copyright a {
+  color: #aaa;
+}
+
+
 /* Navigation */
 
 nav {
