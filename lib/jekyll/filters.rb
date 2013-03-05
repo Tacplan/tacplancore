@@ -39,7 +39,7 @@ module Jekyll
     #
     # Returns the formatted String.
     def date_to_long_string(date)
-      date.strftime("%d %B %Y")
+      date.strftime("%d %B %Y %H%M")
     end
 
     # Format a date for use in XML.
