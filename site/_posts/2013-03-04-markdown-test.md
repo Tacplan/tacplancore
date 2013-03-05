@@ -1,5 +1,8 @@
-# Welcome to MarkdownPad #
-10:07 AM Tuesday, March 05, 2013
+---
+layout: post
+title: Welcome To MarkdownPad
+date: 10:12 AM Tuesday, March 05, 2013
+---
 
 **MarkdownPad** is a full-featured Markdown editor for Windows. 
 
