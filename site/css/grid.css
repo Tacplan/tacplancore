@@ -54,7 +54,8 @@
   width: 474px;
 }
 
-.grid4 {  
+.grid4 { 
+border-top: 1px solid #000; 
 }
 
 .grid5 {
