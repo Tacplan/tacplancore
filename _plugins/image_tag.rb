@@ -69,7 +69,7 @@ module Jekyll
       end
 
       source += "<img src=\"#{@url}\">"
-      source += "<figcaption><center>#{@caption}</center></figcaption>" if @caption
+      source += "<figcaption><center><i>#{@caption}</i></center></figcaption>" if @caption
       source += "</figure>"
 
       source
