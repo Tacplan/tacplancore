@@ -1,7 +1,7 @@
 module Jekyll
   module MyTimeStamp
         def mydatetime(date)
-            date.strftime("%d %B %Y %H%M")
+            date.strftime("%D %B %Y %H%M")
         end
   end
 end
