@@ -271,8 +271,8 @@ article {
 }
 
 header .dateline {
-  color: #0f0;
-  padding: 0em;
+  color: #000;
+  padding-top: 1em;
   margin: 0;
 }
 
