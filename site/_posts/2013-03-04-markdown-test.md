@@ -15,7 +15,8 @@ How about *italic*? Press ` Ctrl + I `.
 > Write a quote with ` Ctrl + Q `
 
 Embed images in your posts with ease:
-![Amazon Web Services](http://images.tacplan.com.s3.amazonaws.com/img/core/Amazon_Web_Services.png)
+
+{% image http://images.tacplan.com.s3.amazonaws.com/img/core/Amazon_Web_Services.png "Amazon Web Services" %}
 
 No matter what you're working on, you'll have quick access to Markdown syntax with handy keyboard shortcuts and toolbar buttons.
 
