@@ -13,13 +13,13 @@
 
 .post_content {
   padding-right: 40px;
-  float:left;
+  float: left;
   width:700px;
 }
 
 .sidebar_content {
   padding-top: 50px;
-  position: relative;
+  float: left;
   width:280px;
 }
 
