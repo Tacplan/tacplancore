@@ -245,6 +245,10 @@ p {
 
 /* Article HTML */
 
+article h1{
+  font-weight: normal;
+}
+
 article h2,
 article h3,
 article h4,
