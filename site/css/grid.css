@@ -19,7 +19,7 @@
 
 .sidebar_content {
   padding-top: 50px;
-  float:right;
+  position: relative;
   width:280px;
 }
 
