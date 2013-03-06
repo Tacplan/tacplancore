@@ -364,22 +364,15 @@ article .video-note {
  --------------------------------------------------------------*/
 
 #archive {
-    border-bottom: 1px solid #3d3d3d;
 }
 
 #archive article {
-    padding: 0 0 1em 0;
-    margin: 0;
-    border-bottom: none;
 }
 
 #archive header {
-    padding: 0;
 }
 
 #archive article p {
-    padding: 0em;
-    margin: 0em;
 }
 
 /* Tables */
