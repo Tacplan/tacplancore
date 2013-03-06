@@ -21,28 +21,29 @@
   padding-top: 50px;
   float: left;
   width:280px;
+  height: 400px;
 }
 
 .sidebar_block1 {
-  border-bottom: 1px solid #3d3d3d;
+  border-bottom: 1px solid #a79c8d;
   width:200px;
 
 }
 
 .sidebar_block2 {
-  border-bottom: 1px solid #3d3d3d;
+  border-bottom: 1px solid #a79c8d;
   width:200px;
 
 }
 
 .sidebar_block3 {
-  border-bottom: 1px solid #3d3d3d;
+  border-bottom: 1px solid #a79c8d;
   width:200px;
 
 }
 
 .sidebar_block4 {
-  border-bottom: 1px solid #3d3d3d;
+  border-bottom: 1px solid #a79c8d;
   width:200px;
 
 }
