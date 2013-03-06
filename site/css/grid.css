@@ -25,25 +25,24 @@
 }
 
 .sidebar_block1 {
-  border-bottom: 1px solid #a79c8d;
   width:280px;
 
 }
 
 .sidebar_block2 {
-  border-bottom: 1px solid #a79c8d;
+  border-top: 1px solid #a79c8d;
   width:280px;
 
 }
 
 .sidebar_block3 {
-  border-bottom: 1px solid #a79c8d;
+  border-top: 1px solid #a79c8d;
   width:280px;
 
 }
 
 .sidebar_block4 {
-  border-bottom: 1px solid #a79c8d;
+  border-top: 1px solid #a79c8d;
   width:280px;
 
 }
