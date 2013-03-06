@@ -1,25 +1,10 @@
 <div class="sidebar_content">
   <aside>
     <div class="sidebar_block1">
-      <h4>About Me</h4>
+      <h4>Resources</h4>
     </div>
     <div class="sidebar_block2">
-    <ul>
-      <li class="{% if page.title == "Archive" %}current{% endif %}">
-        <a href="{{ site.url }}/archive/archive.html">Archive</a>
-      </li>
-    </ul>
-      <h4>Subscribe</h4>
-  </div>
-  <div class="sidebar_block3">
-      <ul>
-        <a href="{{ site.url }}/feed.xml"><img src="http://images.tacplan.com.s3.amazonaws.com/img/core/rss.png" alt="Syndicate">  Subscribe to rss feed</a>
-      <p></p>
-    </ul>
-    <h4>Resources</h4>
-  </div>
-  <div class="sidebar_block4">
-    <ul>
+        <ul>
       <li>
         <a href="http://www.slideshare.net/amazonwebservices">Welcome to AWS</a>
       </li>
@@ -43,6 +28,21 @@
       </li>
       <li>
         <a href="http://aws.amazon.com/about-aws/whats-new/">What's New at AWS?</a>
+      </li>
+    </ul>
+      <h4>Subscribe</h4>
+  </div>
+  <div class="sidebar_block3">
+      <ul>
+        <a href="{{ site.url }}/feed.xml"><img src="http://images.tacplan.com.s3.amazonaws.com/img/core/rss.png" alt="Syndicate">  Subscribe to rss feed</a>
+      <p></p>
+    </ul>
+    <h4>Archive</h4>
+  </div>
+  <div class="sidebar_block4">
+    <ul>
+      <li class="{% if page.title == "Archive" %}current{% endif %}">
+        <a href="{{ site.url }}/archive/archive.html">Archive</a>
       </li>
     </ul>
   </div>
