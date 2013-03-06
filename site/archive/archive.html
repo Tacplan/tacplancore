@@ -3,11 +3,11 @@ layout: default
 title: archive
 ---
 <div class="maingrid">
-    <div class="post_content">
-    {% for post in site.posts  %}
+    <section id="archive">
+    {% for post in site.posts %}
     {% include listpost.html %}
     {% endfor %}
-    </div>
+    </section>
     <div class="sidebar_content">
       {% include docs_contents.html %}
     </div>

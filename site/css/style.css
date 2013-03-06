@@ -364,8 +364,7 @@ article .video-note {
  --------------------------------------------------------------*/
 
 #archive {
-    border-bottom: 1px solid #ddd;
-    padding-top: 1.0em;
+    border-bottom: 1px solid #3d3d3d;
 }
 
 #archive article {

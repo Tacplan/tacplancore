@@ -17,6 +17,13 @@
   width:700px;
 }
 
+#archive {
+  padding-right: 40px;
+  float: left;
+  width:700px;
+
+}
+
 .sidebar_content {
   padding-top: 50px;
   float: left;
