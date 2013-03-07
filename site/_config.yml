@@ -1,6 +1,7 @@
 auto: false
 server: true
-permalink: /docs/:categories/:title
+markdown: rdiscount
+permalink: date
 pygments: true
 name: TACplan
 description: Military Grade Solutions
