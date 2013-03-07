@@ -3,14 +3,12 @@ layout: default
 ---
 <div class="maingrid">
     <div class="post_content">
-    	<div class='article_body'>
-            <h1 class="article_title">{{ page.title }}</h1>
-            <h6 class="dateline">{{ page.date }}</h6>
-            {{ content }}
-        </div>
+    	<h1 class="article_title">{{ page.title }}</h1>
+        <h6 class="dateline">{{ page.date }}</h6>
+        {{ content }}
     </div>
     <div class="sidebar_content">
       {% include docs_contents.html %}
-</div>
+    </div>
 </div>
 </end>
