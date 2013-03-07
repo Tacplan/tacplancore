@@ -1,5 +1,8 @@
 <article id="{{ page.id }}">
-{% include postheader.html %}
+    <header>
+        <h1 class="article_title">{{ page.title }}</h1>
+        <h6 class="dateline">{{ page.date | date_to_long_string }}</h6>
+    </header>
     <div class="article_body">
     {{ content }}
     </div>
