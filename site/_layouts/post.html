@@ -3,13 +3,15 @@ layout: layout
 title: sample title
 ---
 <body>
-	<section id="conatiner">
-            {% include header.html %}
-        <section id="maincontent">
-    <h1>{{ post.title }}</h1>
-    {{ content }}
-        </section>
-            {% include footer.html %}
-    </section>
-</body>
+	<div class="maingrid">
+        {% include header.html %}
+    <div class="post_content">
+        {% include postheader.html %}
+        {{ content }}
+    </div>
+    <div class="sidebar_content">
+      {% include docs_contents.html %}
+    </div>
+        {% include footer.html %}
+    </body>
 </html>
