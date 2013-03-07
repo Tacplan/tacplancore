@@ -302,7 +302,7 @@ header .dateline {
   margin: 0;
 }
 
-article_body {
+.article_body {
   border-bottom: 1px solid #ddd;
 }
 
