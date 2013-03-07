@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Using Markdownpad For Post Editing
+date: 2013-03-04 14:10
 ---
 
 MarkdownPad is a full-featured Markdown editor for Windows. 
