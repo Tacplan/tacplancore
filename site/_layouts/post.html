@@ -4,6 +4,6 @@
         <h4 class="dateline">{{ page.date | date_to_long_string }}</h4>
     </header>
     <div class="article_body">
-    {{ content }}
+    {{ content | markdownify }}
     </div>
 </article>
