@@ -11,7 +11,7 @@ Want to make something **bold**? Press ` Ctrl + B `.
 
 How about *italic*? Press ` Ctrl + I `.
 
-> Write a quote with ` Ctrl + Q `
+> Write a quote with ` Ctrl + Q `  
 
 Embed images in your posts with ease:
 
