@@ -2,10 +2,14 @@
 layout: layout
 title: sample title
 ---
-
-<div class="content">
-  <div id="post">
+<body>
+	<section id="conatiner">
+            {% include header.html %}
+        <section id="maincontent">
     <h1>{{ post.title }}</h1>
     {{ content }}
-  </div>
-</div>
+        </section>
+            {% include footer.html %}
+    </section>
+</body>
+</html>
