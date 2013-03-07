@@ -4,7 +4,6 @@
         <h6 class="dateline">{{ page.date | date_to_long_string }}</h6>
     </header>
     <div class="article_body">
-    	{% capture fullpost %}{% include fullpost.html %}{% endcapture %}
-{{ fullpost | markdownify }}
+    	{{ content }}
     </div>
 </article>
