@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Amazon S3 + Jekyll = Infinitely Scaling Blog - Part I
 date: 2013-03-07 23:20
 ---
@@ -23,13 +24,10 @@ So S3 is where my site lives for next to nothing and Jekyll helps me get it ther
 
 Remember that t1.micro I mentioned earlier?  That instance is billed at the price of $0.02 per hour.  Yes, two cents.  Since I'm not hosting the webpage itself on the instance, I only need it long enough for Jekyll to generate my site and upload it to S3. After that, I simply terminate it.
 
-Of course that means I have to rebuild the instance, install all the software and copy all of my site data to it every time I want to post on my blog.  Sounds awful, right?  It's not and here's why.  You can script your instances to that they auto-configure themselves while they are booting for the first time.
+Of course that means I have to rebuild the instance, install all the software and copy all of my site data to it every time I want to post on my blog.  Sounds awful, right?  It's not and here's why.  You can *script* your instances so that they auto-configure themselves while they are booting for the first time.
 
-Basically, here's what happens when I post.  I write my post and upload it to [GitHub](https://github.com/) (free). Then I spin up a t1.micro instance using a boot script I put together.  The script installs everything on it's own and then downloads the entire site along with the new post from GitHub.  The script fires up Jekyll and then uploads it all to S3.  Finally I terminate the instance and I'm done.  The whole process only took about two minutes. You can actually automate the entire thing with a scheduled task. Upload to GitHub and walk away.
+Basically, here's what happens when I post.  I write my post and upload it to [GitHub](https://github.com/) (free). Then I spin up a t1.micro instance using a boot script I put together.  The script installs everything on it's own and then downloads the entire site along with the new post from GitHub.  The script fires up Jekyll and then uploads it all to S3.  Finally I terminate the instance and I'm done.  The whole process only takes about two minutes. You can actually automate the entire thing with a scheduled task. Simply upload your post to GitHub and walk away. You could let the scheduled task upload your posts on a nightly basis. 
 
-So, now I have worry-free uptime, infinite scalability, and oh by the way it's costing $8.53 per *YEAR* if I blog every day (yeah right).  Add [Google Analytics](http://www.google.com/analytics/) (free), and [Disqus](http://www.disqus.com/) (also free) for comments, and we've got the makings of a blog with some street cred. Did I mention that this setup is [free for a year](http://aws.amazon.com/free/) to new AWS customers?
+So, now I have worry-free uptime, infinite scalability, and oh by the way it costs $8.53 per *YEAR* if I blog every day (yeah right).  Add [Google Analytics](http://www.google.com/analytics/) (free), [Disqus](http://www.disqus.com/) for comments (also free), and we've got the makings of a blog with some street cred. Did I mention that this setup is [free for a year](http://aws.amazon.com/free/) to new AWS customers?
 
 In my next post, I'll outline all the steps you need to essentially clone my site.
-
-
-
