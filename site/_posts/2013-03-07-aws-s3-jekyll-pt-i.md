@@ -1,5 +1,5 @@
 ---
-title: Amazon S3 + Jekyll = Infinitely Scaling Blog (And Cheap Too) - PART I
+title: Amazon S3 + Jekyll = Infinitely Scaling Blog - Part I
 date: 2013-03-07 23:20
 ---
 
