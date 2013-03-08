@@ -1,9 +1,12 @@
 auto: false
 server: false
+site: safe
 extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
 permalink: /:year/:month/:title/
 pygments: true
 name: TACplan
 description: Military Grade Solutions
 url: http://www.tacplan.com
+provider: google
 google_analytics_id: UA-39122819-1
+tracking_id: UA-39122819-1
