@@ -28,6 +28,8 @@ Of course that means I have to rebuild the instance, install all the software an
 
 Basically, here's what happens when I post.  I write my post and upload it to [GitHub](https://github.com/) (free). Then I spin up a t1.micro instance using a boot script I put together.  The script installs everything on it's own and then downloads the entire site along with the new post from GitHub.  The script fires up Jekyll and then uploads it all to S3.  Finally I terminate the instance and I'm done.  The whole process only takes about two minutes. You can actually automate the entire thing with a scheduled task. Simply upload your post to GitHub and walk away. You could let the scheduled task upload your posts on a nightly basis. 
 
-So, now I have worry-free uptime, infinite scalability, and oh by the way it costs $8.53 per *YEAR* if I blog every day (yeah right).  Add [Google Analytics](http://www.google.com/analytics/) (free), [Disqus](http://www.disqus.com/) for comments (also free), and we've got the makings of a blog with some street cred. Did I mention that this setup is [free for a year](http://aws.amazon.com/free/) to new AWS customers?
+Two additional services worth mentioning are Amazon Cloudfront to front-end my site so it loads super fast no matter where my readers are, and Amazon Route53 for DNS.  Now I have worry-free uptime, infinite scalability, and oh by the way it costs [$1.00 per month](http://calculator.s3.amazonaws.com/calc5.html#r=IAD&key=calc-5AC5887F-FC67-4777-AE90-60A7623D1844) if I post 3 times a week.
 
-In my next post, I'll outline all the steps you need to essentially clone my site.
+Add [Google Analytics](http://www.google.com/analytics/) (free), [Disqus](http://www.disqus.com/) for comments (also free), and we've got the makings of a blog with some street cred. 
+
+In my next post, I'll show you what you need to run your own Jekyll blog on S3.
