@@ -47,18 +47,19 @@ Download my bootstrap script [here](http://www.tacplan.com/bootstrap_ec2), and s
 - *URL to your GitHub fork of my repo*
 
 Below is an excerpt of the sections you need to modify:
-` # Copy and paste your AWS keys: `
-` export AWS_ACCESS_KEY_ID=AKISH82DKFH2811D490G `
-` export AWS_ACCESS_KEY_SECRET=dn/84alkDLms73KSNDl+fCsID38+uh81Z `
 
-` # Set the name of your S3 bucket: `
-` export S3_BUCKET=www.myawesomeblog.com `
+` # Copy and paste your AWS keys:
+export AWS_ACCESS_KEY_ID=AKISH82DKFH2811D490G
+export AWS_ACCESS_KEY_SECRET=dn/84alkDLms73KSNDl+fCsID38+uh81Z
 
-` # Set the URL to your GitHub fork: `
-` export GITPATH=git://github.com/youraccountname/blogsample.git `
+# Set the name of your S3 bucket:
+export S3_BUCKET=www.myawesomeblog.com
 
-` # Set your email address to be alerted when this instance is done `
-` export EMAIL=yourname@youremaildomain.com `
+# Set the URL to your GitHub fork:
+export GITPATH=git://github.com/youraccountname/blogsample.git
+
+# Set your email address to be alerted when this instance is done
+export EMAIL=yourname@youremaildomain.com `
  
 **The Blogging Process**
 Now you should have all the necessary pieces in place. Here's how the blogging process will work. You don't need to write a post now, I just wanted to explain how the process works. Feel free to move on to the next section and come back here when you want to write a test post.
