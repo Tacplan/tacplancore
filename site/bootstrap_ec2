@@ -1,0 +1,89 @@
+#!/bin/bash
+set -e -x
+export DEBIAN_FRONTEND=noninteractive
+
+# Copy and paste your AWS keys:
+export AWS_ACCESS_KEY_ID=AKISH82DKFH2811D490G
+export AWS_ACCESS_KEY_SECRET=dn/84alkDLms73KSNDl+fCsID38+uh81Z
+
+# Set the name of your S3 bucket:
+export S3_BUCKET=www.myawesomeblog.com
+
+# Set the URL to your GitHub fork:
+export GITPATH=git://github.com/youraccountname/blogsample.git
+
+# Set your email address to be alerted when this instance is done
+export EMAIL=yourname@youremaildomain.com
+
+####
+# !!! Leave everything below alone for our test. !!!
+####
+# Update the apt-get software catalog and update the system
+apt-get update 
+apt-get upgrade --yes
+
+# Install apps required for website processing
+apt-get --yes --quiet install postfix s3cmd git rubygems libopenssl-ruby libxslt-dev libxml2-dev
+
+# Clone the repository to the local EC2 instance
+git clone $GITPATH /root/blogsample
+
+# Move into the local clone of the site
+cd /root/blogsample
+
+# Build the Jekyll config script
+echo "s3_id: "$AWS_ACCESS_KEY_ID >/root/blogsample/_jekyll_s3.yml
+echo "s3_secret: "$AWS_ACCESS_KEY_SECRET >>/root/blogsample/_jekyll_s3.yml
+echo "s3_bucket: "$S3_BUCKET >>/root/blogsample/_jekyll_s3.yml
+
+# Install Ruby components needed.  I had to break these up due to AWS bootstrap timing issues.
+gem install --no-rdoc --no-ri jekyll
+gem install --no-rdoc --no-ri RedCloth
+gem install --no-rdoc --no-ri rdiscount
+gem install --no-rdoc --no-ri redcarpet
+gem install --no-rdoc --no-ri nokogiri
+gem install --no-rdoc --no-ri jekyll-s3
+
+# Build the static version of the site
+jekyll --no-server site/ _site/
+
+# Upload the static site to S3
+jekyll-s3 -h
+
+# Get some information about the running instance
+instance_id=$(wget -qO- instance-data/latest/meta-data/instance-id)
+public_ip=$(wget -qO- instance-data/latest/meta-data/public-ipv4)
+zone=$(wget -qO- instance-data/latest/meta-data/placement/availability-zone)
+region=$(expr match $zone '\(.*\).')
+uptime=$(uptime)
+
+# Send status email
+/usr/sbin/sendmail -oi -t -f $EMAIL <<EOM
+From: $EMAIL
+To: $EMAIL
+Subject: Your blog site has been updated: 
+http://$S3_BUCKET.s3-website-us-east-1.amazonaws.com
+
+For troubleshooting purposes, these were your settings in bootstrap_ec2:
+
+AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+AWS_ACCESS_KEY_SECRET: $AWS_ACCESS_KEY_SECRET
+S3_BUCKET: $S3_BUCKET
+GITPATH: $GITPATH
+EMAIL: EMAIL
+
+This email message was generated on the following EC2 instance:
+
+  instance id: $instance_id
+  region:      $region
+  public ip:   $public_ip
+  uptime:      $uptime
+EOM
+
+# Give the email some time to be queued and delivered
+sleep 45 # 45 seconds
+
+# Time to terminate
+shutdown -h now
+
+exit 0
