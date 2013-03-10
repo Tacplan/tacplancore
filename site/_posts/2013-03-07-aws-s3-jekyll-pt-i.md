@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Amazon S3 + Jekyll = Infinitely Scaling Blog - Part I
-date: 2013-03-07 23:20
+date: 2013-03-07 23:22
 ---
 
 For some of us bloggers, one visitor a month is a big deal. We're like lonely little islands in the vast ocean of the Internet.  As I'm writing this, even prior to this post, my entire website is precisely 58,271 bytes. 
