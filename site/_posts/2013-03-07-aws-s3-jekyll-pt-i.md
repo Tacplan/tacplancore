@@ -2,9 +2,16 @@
 layout: post
 title: Amazon S3 + Jekyll = Infinitely Scaling Blog - Part I
 date: 2013-03-07 23:23
+tags:
+- jekyll
+- aws
+- s3
+- blogging
+- ec2
+- github
 ---
 
-For some of us bloggers, one visitor a month is a big deal. We're like lonely little islands in the vast ocean of the Internet.  As I'm writing this, even prior to this post, my entire website is precisely 58,271 bytes. 
+For many of us bloggers, one visitor a month is a big deal. We're like lonely little islands in the vast ocean of the Internet.  As I'm writing this, even prior to this post, my entire website is precisely 58,271 bytes. 
 
 Clearly I don't need much in the way of resources and a home PC could host my site nicely. Even that's overkill though, and it's going to cost me if I leave it up 24 hours a day.  And of course I would, because with only 1 visitor a month, I don't want to miss them just because I'm pinching pennies.
 

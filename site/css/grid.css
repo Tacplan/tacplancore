@@ -111,9 +111,15 @@ footer {
   clear: both;
   height: 0;
 }
+
 * html .clear {
   zoom: 1;
-} /* IE6 */
+}
+
+/* IE6 */
+
 *:first-child+html .clear {
   zoom: 1;
-} /* IE7 */
+}
+
+/* IE7 */
