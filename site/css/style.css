@@ -123,9 +123,10 @@ nav li.current a {
 }
 
 .features .content {
- }
+}
 
 /* Code */
+
 .quickstart .code {
   display: block;
   background: #3d3d3d;
@@ -219,7 +220,6 @@ pre, code {
   width: 100%;
   overflow: scroll;
 }
-
 
 /* HTML Elements */
 
