@@ -10,7 +10,7 @@ Clearly I don't need much in the way of resources and a home PC could host my si
 
 [Energy.Gov](http://energy.gov/energysaver/articles/estimating-appliance-and-home-electronic-energy-use) says running that PC will cost me about $260 a year, or $21.66 a month.  And really, the PC is way too powerful for my one lonely visitor each month.  But what if traffic picks up for some reason? I could be flooded with traffic, the site will crash, and my would-be visitors will all leave, never to return.
 
-Enter [Amazon AWS](http://aws.amazon.com/).  I can easily fire up a [t1.micro](http://aws.amazon.com/ec2/instance-types/) EC2 instance for a paltry $14.64 per month, and I even get it preloaded with Wordpress for no extra charge. It's a few extra bucks a month compared to the trusty old PC, but now it's running on one of the most robust, fault-tolerant computing infrastructures on the planet.
+Enter [Amazon AWS](http://aws.amazon.com/).  I can easily fire up a [t1.micro](http://aws.amazon.com/ec2/instance-types/) EC2 instance for a paltry $14.64 per month, and I even get it preloaded with Wordpress for no extra charge. It's a bit cheaper than the trusty old PC, and now it's running on one of the most robust, fault-tolerant computing infrastructures on the planet.
 
 That's all well-and good, but what about scalability?  Sure, I can bring all the powers of AWS to bear and turn the lone Wordpress instance into an all powerful auto-scaling monster, but seriously... I already have a day job.  I needed something simple and cheap, while still allowing me my delusions of grandeur by providing that scalability that I like to pretend I'll need someday.
 
