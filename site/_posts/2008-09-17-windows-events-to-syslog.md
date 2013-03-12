@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Sending Windows Events To A SysLog Server
-date: 2009-09-17 20:33
+date: 2008-09-17 20:33
 tags:
 - syslog
 - windows
@@ -50,6 +50,7 @@ You can also specify custom facilities for Eventlog to Syslog, but I won’t go 
 <br />
 
 **DEPLOYMENT SCRIPT**
+
 Whether you have dozens or hundreds of Windows servers to monitor, a scripted deployment is the easiest and fastest way to go.  If you have thousands of servers to monitor, you should be taking your time with this and plan thoroughly.
 
 Basically, I have a script that I use for installing the service and starting it remotely.  I like to use a tool called "Hyena" to schedule the execution of the script on multiple servers as AT jobs.  A similar tool is "Dameware".  If you're really clever, you can use WMI scripting or even domain logon scripts.  
@@ -400,4 +401,5 @@ exit $RETVAL
 {% endhighlight %}
 
 **SYNOPSIS**
+
 And that’s it!  All in all, this is a pretty simple thing to get going in any environment.  You may choose to customize it further, or scale it down from what I have provided.  Whatever you decide, I hope that this tutorial was helpful to you.
