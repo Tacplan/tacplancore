@@ -13,7 +13,7 @@ tags:
 
 In my last [post](http://www.tacplan.com/2013/03/aws-s3-jekyll-pt-i/), I promised to give instructions on how to clone my blog setup.  It's not difficult, but there are a few ingredients and various accounts that you're going to need.
 
-I won't be covering CloudFront, Route53, Disqus, or Google Analytics in this post.  The intent here is just to get a simple blog up and running using EC2, S3, Jekyll and Github.  You can add these other features once we have the basic setup done and working.
+I won't be covering CloudFront, Route53, or Google Analytics in this post.  My main intent is just to help you get a simple blog up and running using EC2, S3, Jekyll and Github.  Feel free to add these other features once we have the basic setup done and working.
 
 Before we can get started, you're going to need an [*Amazon AWS*](http://aws.amazon.com/) account and a [*GitHub*](https://github.com/) account.  Once you have those, we can continue.
 
