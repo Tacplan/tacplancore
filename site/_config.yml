@@ -1,10 +1,8 @@
 auto: false
 server: false
-markdown: redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data"]
+markdown: rdiscount
 permalink: /:year/:month/:title/
-pygments: false
+pygments: true
 name: TACplan
 description: Military Grade Solutions
 url: http://www.tacplan.com
