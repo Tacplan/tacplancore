@@ -112,7 +112,7 @@ I chose to use a Fedora system for this deployment initially, because is easily 
 Here are the steps I took to configure syslog-ng on my Fedora Core 6 system:
 
 As ‘root’, run:
-{% highlight bash}
+{% highlight bash %}
 yum install syslog-ng
 {% endhighlight %}
 
