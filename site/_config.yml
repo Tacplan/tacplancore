@@ -1,5 +1,6 @@
 auto: false
 server: false
+markdown: redcarpet
 extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
 permalink: /:year/:month/:title/
 pygments: true

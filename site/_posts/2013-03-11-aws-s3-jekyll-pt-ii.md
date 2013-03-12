@@ -70,7 +70,7 @@ Download my bootstrap script [here](http://www.tacplan.com/bootstrap_ec2), and s
 
 
 Below is an excerpt of the sections you need to modify:
-{% highlight bash %}
+```
 # Copy and paste your AWS keys
 export AWS_ACCESS_KEY_ID=AKISH82DKFH2811D490G
 export AWS_ACCESS_KEY_SECRET=dn/84alkDLms73KSNDl+fCsID38+uh81Z
@@ -83,7 +83,7 @@ export GITPATH=git://github.com/youraccountname/blogsample.git
 
 # Set your email address to be alerted when this instance is done
 export EMAIL=yourname@youremaildomain.com
-{% endhighlight %}
+```
 <br />
 
 **The Blogging Process**
