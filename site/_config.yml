@@ -1,6 +1,5 @@
 auto: false
 server: false
-markdown: rdiscount
 permalink: /:year/:month/:title/
 pygments: true
 name: TACplan
