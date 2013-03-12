@@ -20,10 +20,10 @@ Windows systems that you want to get log data from
 A syslog server to send the data to
 The "Eventlog to Syslog" utility
 
-If you already have a syslog server, and are just here to get your Windows server reporting to it, then proceed to the EVENTLOG TO SYSLOG UTILITY section.
-If you simply want the deployment script, check out the DEPLOYMENT SCRIPT section.
-If you don't have a syslog server yet, you can follow my directions in the SYSLOG SERVER section or use any of the instructions out there on the web.
-If you are just here to configure swatch, check out the SWATCH CONFIGURATION section.
+If you already have a syslog server, and are just here to get your Windows server reporting to it, then proceed to the *EVENTLOG TO SYSLOG UTILITY* section.
+If you simply want the deployment script, check out the *DEPLOYMENT SCRIPT* section.
+If you don't have a syslog server yet, you can follow my directions in the *SYSLOG SERVER* section or use any of the instructions out there on the web.
+If you are just here to configure swatch, check out the *SWATCH CONFIGURATION* section.
 If you're here for the whole lot, then read on from this point.
 
 <br />
@@ -38,7 +38,11 @@ I recommend downloading all available files for posterity- You never know if and
 
 To manually install the utility: 
 Uncompress "evtsys.DLL" and "evtsys.exe" to %systemroot%\system32.
-At a command prompt, enter "%systemroot\system32\evtsys.exe -i -h hostname", where "hostname" is the IP address or DNS name of your syslog server.
+At a command prompt, enter: 
+
+{% highlight bash %}"%systemroot\system32\evtsys.exe -i -h hostname"{% endhighlight %}
+
+Where "hostname" is the IP address or DNS name of your syslog server.
 At the command prompt or through the services GUI, start the "Eventlog to Syslog" service.
 The service is now running and forwarding all Eventlog entries via UDP port 514 to the hostname you specified.  Obviously, since this is UDP there will be no error messages if the remote syslog server is down.  
 You can also specify custom facilities for Eventlog to Syslog, but I won’t go into them here.  Visit the project homepage.
