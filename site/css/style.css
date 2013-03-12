@@ -269,8 +269,7 @@ article code {
 }
 
 article pre.code {
-  border: 1px solid #ddd;
-  background-color: #3d3d3d;
+    background-color: #3d3d3d;
 }
 
 article pre code {
