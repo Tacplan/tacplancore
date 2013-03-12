@@ -158,7 +158,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-h1, a {  color: #7d7d7d;
+h1 a {  color: #7d7d7d;
   text-decoration: none;
   transition: all .25s;
    -moz-transition: all .25s;
