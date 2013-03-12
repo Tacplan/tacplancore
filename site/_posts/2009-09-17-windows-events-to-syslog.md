@@ -9,9 +9,9 @@ tags:
 - swatch
 - logs
 ---
-[i]
-#####This post was migrated over from my old blog at [Blogspot](http://www.blogspot.com)
-[/i]
+
+######This post was migrated over from my old blog at [Blogspot](http://www.blogspot.com)
+
 Many of us know and love (or hate) syslog and syslog-ng for UNIX based operating systems.  The ability to collect and monitor all UNIX based system logs in a centralized repository has been a standard feature of UNIX systems for ages now.  This is great, if all you have are UNIX or Linux systems.  
 After much trial and error, I have found what I believe to be the simplest and most cost-effective method of deploying centralized logging for Windows systems.  I have documented everything here as best as I can remember.
 
