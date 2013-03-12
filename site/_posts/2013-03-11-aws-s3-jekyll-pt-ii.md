@@ -36,7 +36,7 @@ GitHub is essentially is an Internet-based source code repository that supports 
 
 After creating your GitHub account, fork [my repository](https://github.com/Tacplan/blogsample) by simple clicking the "*Fork*" button.
 
-<center>![](http://images.tacplan.com.s3.amazonaws.com/img/core/fork_01.png)</center>
+<center>{% image http://images.tacplan.com.s3.amazonaws.com/img/core/fork_01.png "GitHub Fork Button" %}</center>
 
 Then install the [GitHub client](http://github-windows.s3.amazonaws.com/GitHubSetup.exe) on your PC.  I'm working with Windows, so my directions will be centered on that.  There are GitHub clients for Mac and Linux as well, but you'll have to find directions for those on your own.
 
@@ -73,8 +73,8 @@ Below is an excerpt of the sections you need to modify:
 
 {% highlight bash %}
 # Copy and paste your AWS keys
-export AWS_ACCESS_KEY_ID=AKISH82DKFH2811D490G
-export AWS_ACCESS_KEY_SECRET=dn/84alkDLms73KSNDl+fCsID38+uh81Z
+export AWS_ACCESS_KEY_ID=AKISH82DKS7KL23KLSD992
+export AWS_ACCESS_KEY_SECRET=dn/84al23SDms73SFDFl+fCsID38+uh8S2
 
 # Set the name of your S3 bucket
 export S3_BUCKET=www.myawesomeblog.com
@@ -96,7 +96,7 @@ When you write a new post, save it with a "year-month-day-name.md" format to "%u
 
 Next, open up your GitHub client and hit "*Refresh*" at the top.  It will recognize that you have made a change to your local cloned copy of the repo.  A yellow box in the upper-right will ask you for a "*Commit Message*".  Just enter "*Test Post*" if you like and click "*Commit*".
 
-<center>![](http://images.tacplan.com.s3.amazonaws.com/img/core/github_chg.png)</center>
+<center>{% image http://images.tacplan.com.s3.amazonaws.com/img/core/github_chg.png "GitHub Commit Dialogue" %}</center>
 
 Now your new post is ready to be uploaded to the the forked GitHub repo on the Internet.  Click "*Sync*" at the top.
 
