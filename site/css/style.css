@@ -148,6 +148,9 @@ pre, code {
 }
 
 .highlight {
+  overflow: auto;
+  overflow-y: hidden;
+  -ms-overflow-y: hidden;
   padding: 10px 0;
   width: 100%;
 }
