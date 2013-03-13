@@ -52,8 +52,14 @@
 
 .sidebar_block4 {
   border-top: 1px solid #a79c8d;
+  padding-top: 15px;
+  padding-left: 20px;
   width:280px;
+}
 
+.sidebar_block5 {
+  border-top: 1px solid #a79c8d;
+  width:280px;
 }
 
 
