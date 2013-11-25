@@ -112,7 +112,7 @@ For this tutorial, I'll assume that you want to leverage SNS and SQS.  If not, i
 {% endhighlight %}
 
 9. Now let's set up our deployment directory. Create a directory called "AWS Tools".
-10. Download the AWS [SDK](You can download it here: http://aws.amazon.com/powershell/) for Windows to "AWS Tools", and rename it to *AWSSDK.msi*.
+10. Download the AWS [SDK](http://aws.amazon.com/powershell) for Windows to "AWS Tools", and rename it to *AWSSDK.msi*.
 11. I like to make deployment easy and repeatable, so I created the following batch file called, "AutoSnap_Setup.bat".  It only needs to be run once on an instance and sets up the environment and installs the AWS SDK for Windows.
 
 {% highlight bash %}
