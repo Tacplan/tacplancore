@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Snapshot Automation With PowerShell
+title: EBS Snapshot Automation With PowerShell
 date: 2013-11-24 19:26
 tags:
 - snapshots
@@ -42,19 +42,19 @@ In the future, I plan to write up a cross-platform project, but for now this sol
 
 For this tutorial, I'll assume that you do want to leverage SNS and SQS.  If not, ignore the bits about them and be sure to remove references to them from the script.  Here we go, step by step:
 
-Create a new SNS topic.  I called mine "AutoSnap_SNS_Log". [Learn More](http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html)
+1\. Create a new SNS topic.  I called mine "AutoSnap_SNS_Log". [Learn More](http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html)
 
 - I'm not sure if this is a bug or what, but I had to allow "Everybody" access to my SNS topic.
 
-Create a new SQS queue.  I called mine "AutoSnap_SQL_Log". [Learn More](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/CreatingQueue.html)
+2\. Create a new SQS queue.  I called mine "AutoSnap_SQL_Log". [Learn More](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/CreatingQueue.html)
 
-Copy the ARN of the SQS queue and subscribe it to the SNS topic.
+3\. Copy the ARN of the SQS queue and subscribe it to the SNS topic. [Learn More](http://docs.aws.amazon.com/sns/latest/dg/SendMessageToSQS.html)
 
-Create an IAM account to use for your snapshots and call it what you like.  I chose "backupsvc". [Learn More](http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_SettingUpUser.html)
+4\. Create an IAM account to use for your snapshots and call it what you like.  I chose "backupsvc". [Learn More](http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_SettingUpUser.html)
 
 - You will need to document the Access and Secret keys. [Learn More](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html)
 
-Give the IAM account permission to work with snapshots. [Learn More](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html) 
+5\. Give the IAM account permission to work with snapshots. [Learn More](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html) 
 
 
         {% highlight bash %}
@@ -80,7 +80,7 @@ Give the IAM account permission to work with snapshots. [Learn More](http://docs
         }
         {% endhighlight %}
 <br/>
-Give the IAM account permission to work with SNS:
+6\. Give the IAM account permission to work with SNS:
 
         {% highlight bash %}
         {
@@ -100,7 +100,7 @@ Give the IAM account permission to work with SNS:
         }
         {% endhighlight %}
 <br/>
-Give the account permission to work with SQS:
+7\. Give the account permission to work with SQS:
 
         {% highlight bash %}
         {
@@ -121,12 +121,12 @@ Give the account permission to work with SQS:
         }
         {% endhighlight %}
 <br/>
-Now let's set up our deployment directory. Create a directory called "AWS Tools".
+8\. Now let's set up our deployment directory. Create a directory called "AWS Tools".
 
-Download the AWS [SDK](http://aws.amazon.com/powershell) for Windows to "AWS Tools", and rename it to *AWSSDK.msi*.
+9\. Download the AWS [SDK](http://aws.amazon.com/powershell) for Windows to "AWS Tools", and rename it to *AWSSDK.msi*.
 
 
-I like to make deployment easy and repeatable, so I created the following batch file called, "AutoSnap_Setup.bat".  The purpose of this batch file is solely to configure the server environment and only needs to be run once per server instance:
+10\. I like to make deployment easy and repeatable, so let's create the following batch file and name it, "AutoSnap_Setup.bat".  The purpose of this batch file is solely to configure the server environment and only needs to be run once per server instance.  Again, place it in the same "AWS Tools" directory:
 
 
         {% highlight bat %}
@@ -145,10 +145,10 @@ I like to make deployment easy and repeatable, so I created the following batch 
         {% endhighlight %}
 <br/>
 
-> *Note*: If you already have an IAM account set up in your environmental variables for other purposes, then you'll need to modify a few things and start using stored credentials- which is a topic that is out of scope here.  Don't worry though, it's easy to implement, and the directions are [here](http://docs.aws.amazon.com/powershell/latest/userguide/specifying-your-aws-credentials.html).
+:   *Note*: If you already have an IAM account set up in your environmental variables for other purposes, then you'll need to modify a few things and start using stored credentials- which is a topic that is out of scope here.  Don't worry though, it's easy to implement, and the directions are [here](http://docs.aws.amazon.com/powershell/latest/userguide/specifying-your-aws-credentials.html).
 <br/>
 
-In a moment we'll create a PowerShell script (.ps1) in the same "AWS Tools" directory, *BUT FIRST* some things to customize:
+11\. In a moment we'll create a PowerShell script (.ps1) in the same "AWS Tools" directory, *BUT FIRST* some things to customize:
 - You can change the time/date stamp format.  Your needs may require the time and not just the date, for example.  The current setting will produce the following stamp for June 1st, 2013:  *060113*
 
 - Set your "Job Group Code".  This is a prefix you can use to designate whether this a daily, monthly, weekly, or whatever type of snapshot.  It's currently set to "STD" for "standard".
@@ -288,19 +288,22 @@ foreach ($volume in $volumes)
 
 <br/>
 
-**Create a snapshot**
+**Configure The Environment**
+
 You should now have a directory with the following contents:
 - AutoSnap.ps1
 - AutoSnap_Setup.bat
 - AWSSDK.msi
 
-To set up the instance for running the script in the future, right-click on the batch file and run it as Administrator.  You only have to do this once, and it will perform the following steps:
+To set up the instance for running the script in the future, right-click on the batch file "AutoSnap_Setup.bat" and run it as Administrator.  You only have to do this once, and it will perform the following steps:
 
-1. Set system environmental variables for your AWS credentials and default region.
-2. Allow unsigned scripts to be executed in PowerShell.
-3. Install the AWS SDK for Windows.
+- Set system environmental variables for your AWS credentials and default region.
+- Allow unsigned scripts to be executed in PowerShell.
+- Install the AWS SDK for Windows.
 
-Once the batch file is finished, you can execute the PowerShell script itself.  The script will identify each attached EBS volume and initiate a snapshot for each.  It will also look for snapshots that match the prefix rules you set that are older than the age you set, then delete them.
+**Create Snapshots**
+
+Once the batch file is finished running, you can execute the PowerShell script itself.  The script will identify each attached EBS volume and initiate a snapshot for each.  It will also look for snapshots that match the prefix rules you set that are older than the age you set, then delete them.
 
 For automation, I like to create a scheduled task and then export the config to the "AWS Tools" directory.  Then I can simply copy the directory to each instance I want to set this up on, run the batch file, import the .xml to Task Scheduler, and walk away.  That instance is now set up for backups.
 
