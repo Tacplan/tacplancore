@@ -26,6 +26,7 @@ This system will also prune old snapshots automagically.  Daily, Weekly, and Mon
 <br/>
 
 **Requirements**
+
 In the future, I plan to write up a cross-platform solution, but for now this solution has the following requirements:
 
 - An EC2 instance running Windows 2008, Windows 2008R2, or Windows 2012.
@@ -38,6 +39,7 @@ In the future, I plan to write up a cross-platform solution, but for now this so
 <br/>
 
 **AWS Environment Prerequisites**
+
 For this tutorial, I'll assume that you want to leverage SNS and SQS.  If not, ignore the bits about them and be sure to remove references to them from the script.
 
 1. Create a new SNS topic.  I called mine "AutoSnap_SNS_Log".
@@ -115,7 +117,7 @@ For this tutorial, I'll assume that you want to leverage SNS and SQS.  If not, i
 10. Download the AWS [SDK](http://aws.amazon.com/powershell) for Windows to "AWS Tools", and rename it to *AWSSDK.msi*.
 11. I like to make deployment easy and repeatable, so I created the following batch file called, "AutoSnap_Setup.bat".  It only needs to be run once on an instance and sets up the environment and installs the AWS SDK for Windows.
 
-{% highlight bash %}
+{% highlight bat %}
 :: EC2 API Config
 
 :: We use SETX to set the IAM credentials and default region as environmental variables.
@@ -138,7 +140,7 @@ cmd.exe /c msiexec.exe /i "c:\AWS Tools\AWSSDK.msi" /qn /l* "c:\AWS Tools\AWSSDK
 
 - Set your "Job Group Code".  This is a prefix you can use to designate whether this a daily, monthly, weekly, or whatever type of snapshot.  It's currently set to "STD" for "standard".
 
-- With the above two settings, and the hostname of your EC2 instance, your snapshot's "prefix" will be determined.  The defaults will create this as a snapshot description:  *HOSTNAME_AutoSnap_STD_060113*
+- With the above two settings, and the hostname of your EC2 instance, your snapshot's "prefix" will be determined.  The defaults will create this as a snapshot description:  **HOSTNAME_AutoSnap_STD_060113**
 
 This is important, because the delete portion of the script will ONLY DELETE snapshots with that prefix.  This way, you 
 don't have to worry about accidentally deleting snapshosts for other instances, or even one-off snapshots that you may have created manually.
@@ -146,13 +148,16 @@ don't have to worry about accidentally deleting snapshosts for other instances, 
 It ALSO opens the door for different types of rotations.  For example, you can have four scripts on the same server with different prefixes and expirations as follows:
 
 HOSTNAME_AutoSnap_DAILY_060113, set to expire after 7 days
+
 HOSTNAME_AutoSnap_WEEKLY_060113, set to expire after 14 days
+
 HOSTNAME_AutoSnap_MONTHLY_060113, set to expire after 365 days
+
 HOSTNAME_AutoSnap_YEARLY_060113, never expires
 
 You will be able to use Windows Task Scheduler to configure different execution timings for each script. For now, we will just start with one script called, "AutoSnap.ps1", with the following contents:
 
-{% highlight bash %}
+{% highlight powershell %}
 #***********************
 #*** AutoSnap Script ***
 #***********************
