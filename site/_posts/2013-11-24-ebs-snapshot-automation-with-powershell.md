@@ -2,6 +2,7 @@
 layout: post
 title: EBS Snapshot Automation With PowerShell
 date: 2013-11-24 19:26
+comments: true
 tags:
 - snapshots
 - aws
