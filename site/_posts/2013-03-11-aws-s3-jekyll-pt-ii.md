@@ -73,8 +73,8 @@ Below is an excerpt of the sections you need to modify:
 
 {% highlight bash %}
 # Copy and paste your AWS keys
-export AWS_ACCESS_KEY_ID=AKISH82DKS7KL23KLSD992
-export AWS_ACCESS_KEY_SECRET=dn/84al23SDms73SFDFl+fCsID38+uh8S2
+export AWS_ACCESS_KEY_ID=AKIAIID123456789IUQ
+export AWS_ACCESS_KEY_SECRET=aBcDeFgHiJkLmNoPqRstUvwXyZ/AbCdEfGhIJ12aB34
 
 # Set the name of your S3 bucket
 export S3_BUCKET=www.myawesomeblog.com
