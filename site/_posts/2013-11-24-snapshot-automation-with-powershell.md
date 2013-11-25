@@ -142,6 +142,7 @@ cmd.exe /c msiexec.exe /i "c:\AWS Tools\AWSSDK.msi" /qn /l* "c:\AWS Tools\AWSSDK
 <br/>
 12. In a moment we'll create a PowerShell script (.ps1) in the same "AWS Tools" directory, *BUT FIRST* some things to customize:
 <br/>
+
 - You can change the time/date stamp format.  Your needs may require the time and not just the date, for example.  The current setting will produce the following stamp for June 1st, 2013:  *060113*
 
 - Set your "Job Group Code".  This is a prefix you can use to designate whether this a daily, monthly, weekly, or whatever type of snapshot.  It's currently set to "STD" for "standard".
