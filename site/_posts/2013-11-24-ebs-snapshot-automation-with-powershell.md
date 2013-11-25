@@ -42,12 +42,13 @@ In the future, I plan to write up a cross-platform project, but for now this sol
 
 For this tutorial, I'll assume that you do want to leverage SNS and SQS.  If not, ignore the bits about them and be sure to remove references to them from the script.  Here we go, step by step:
 
-1. Create a new SNS topic.  I called mine "AutoSnap_SNS_Log".
-2. I'm not sure if this is a bug or what, but I had to allow "Everybody" access to my SNS topic.
-3. Create a new SQS queue.  I called mine "AutoSnap_SQL_Log".
-4. Copy the ARN of the SQS queue and subscribe it to the SNS topic.
-5. Create an IAM account to use for your snapshots and call it what you like.  I chose "backupsvc".  You will need to document the Access and Secret keys.
-6. Give the IAM account permission to work with snapshots: 
+Create a new SNS topic.  I called mine "AutoSnap_SNS_Log". [Learn More](http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html)
+- I'm not sure if this is a bug or what, but I had to allow "Everybody" access to my SNS topic.
+Create a new SQS queue.  I called mine "AutoSnap_SQL_Log". [Learn More](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/CreatingQueue.html)
+Copy the ARN of the SQS queue and subscribe it to the SNS topic.
+Create an IAM account to use for your snapshots and call it what you like.  I chose "backupsvc". [Learn More](http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_SettingUpUser.html)
+- You will need to document the Access and Secret keys. [Learn More](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html)
+Give the IAM account permission to work with snapshots. [Learn More](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html) 
 
         {% highlight bash %}
         {
@@ -72,7 +73,7 @@ For this tutorial, I'll assume that you do want to leverage SNS and SQS.  If not
         }
         {% endhighlight %}
 <br/>
-7. Give the IAM account permission to work with SNS:
+Give the IAM account permission to work with SNS:
 
         {% highlight bash %}
         {
@@ -92,7 +93,7 @@ For this tutorial, I'll assume that you do want to leverage SNS and SQS.  If not
         }
         {% endhighlight %}
 <br/>
-8. Give the account permission to work with SQS:
+Give the account permission to work with SQS:
 
         {% highlight bash %}
         {
@@ -113,37 +114,35 @@ For this tutorial, I'll assume that you do want to leverage SNS and SQS.  If not
         }
         {% endhighlight %}
 <br/>
-9. Now let's set up our deployment directory. Create a directory called "AWS Tools".
+Now let's set up our deployment directory. Create a directory called "AWS Tools".
 
 <br/>
-10. Download the AWS [SDK](http://aws.amazon.com/powershell) for Windows to "AWS Tools", and rename it to *AWSSDK.msi*.
+Download the AWS [SDK](http://aws.amazon.com/powershell) for Windows to "AWS Tools", and rename it to *AWSSDK.msi*.
 
 <br/>
-11. I like to make deployment easy and repeatable, so I created the following batch file called, "AutoSnap_Setup.bat".  The purpose of this batch file is solely to configure the server environment and only needs to be run once per server instance.
+I like to make deployment easy and repeatable, so I created the following batch file called, "AutoSnap_Setup.bat".  The purpose of this batch file is solely to configure the server environment and only needs to be run once per server instance.
 
 <br/>
-{% highlight bat %}
-:: EC2 API Config
-
-:: We use SETX to set the IAM credentials and default region as environmental variables.
-SETX /M AWS_ACCESS_KEY_ID AKIAIID123456789IUQ
-SETX /M AWS_DEFAULT_REGION us-east-1
-SETX /M AWS_SECRET_ACCESS_KEY aBcDeFgHiJkLmNoPqRstUvwXyZ/AbCdEfGhIJ12aB34
-
-:: Next we open up PowerShell so that it allows scripts to be run.  If you feel this is unsecure, then feel free to change it.
-cmd.exe /c powershell.exe -command "& {Set-ExecutionPolicy RemoteSigned}"
-
-:: This next line simply installs the SDK for you. I renamed it to AWSSDK.msi because it's a more friendly name.
-cmd.exe /c msiexec.exe /i "c:\AWS Tools\AWSSDK.msi" /qn /l* "c:\AWS Tools\AWSSDK.log"
-{% endhighlight %}
+        {% highlight bat %}
+        :: EC2 API Config
+        
+        :: We use SETX to set the IAM credentials and default region as environmental variables.
+        SETX /M AWS_ACCESS_KEY_ID AKIAIID123456789IUQ
+        SETX /M AWS_DEFAULT_REGION us-east-1
+        SETX /M AWS_SECRET_ACCESS_KEY aBcDeFgHiJkLmNoPqRstUvwXyZ/AbCdEfGhIJ12aB34
+        
+        :: Next we open up PowerShell so that it allows scripts to be run.  If you feel this is unsecure, then feel free to change it.
+        cmd.exe /c powershell.exe -command "& {Set-ExecutionPolicy RemoteSigned}"
+        
+        :: This next line simply installs the SDK for you. I renamed it to AWSSDK.msi because it's a more friendly name.
+        cmd.exe /c msiexec.exe /i "c:\AWS Tools\AWSSDK.msi" /qn /l* "c:\AWS Tools\AWSSDK.log"
+        {% endhighlight %}
 
 <br/>
     *Note*: If you already have an IAM account set up in your environmental variables for other purposes, then you'll need to modify a few things and start using stored credentials- which is a topic that is out of scope here.  Don't worry though, it's easy to implement, and the directions are [here](http://docs.aws.amazon.com/powershell/latest/userguide/specifying-your-aws-credentials.html).
-
-
-12. In a moment we'll create a PowerShell script (.ps1) in the same "AWS Tools" directory, *BUT FIRST* some things to customize:
 <br/>
 
+In a moment we'll create a PowerShell script (.ps1) in the same "AWS Tools" directory, *BUT FIRST* some things to customize:
 - You can change the time/date stamp format.  Your needs may require the time and not just the date, for example.  The current setting will produce the following stamp for June 1st, 2013:  *060113*
 
 - Set your "Job Group Code".  This is a prefix you can use to designate whether this a daily, monthly, weekly, or whatever type of snapshot.  It's currently set to "STD" for "standard".
