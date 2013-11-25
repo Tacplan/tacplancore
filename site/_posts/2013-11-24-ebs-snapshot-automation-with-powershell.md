@@ -15,7 +15,7 @@ tags:
 - windows
 ---
  
-Moving your data to the cloud may be helping you eliminate hardware, but it doesn't get you out of the data backup game. You still need to have the ability to recover data to keep your business going, just as you always have.
+Moving your data to the cloud may help you eliminate hardware, but it doesn't eliminate the need for a good backup strategy. You still need to have the ability to recover data to keep your business going, just as you always have.
 
 AWS opens up several possibilities for implementing or augmenting an effective backup strategy. EBS snapshots are so readily available, simple to take advantage of, and cost effective that I would have to question your I.T. street cred if you didn't leverage them in your AWS environment.
 
@@ -27,9 +27,9 @@ This system will also prune old snapshots automagically.  Daily, Weekly, and Mon
 
 **Requirements**
 
-In the future, I plan to write up a cross-platform solution, but for now this solution has the following requirements:
+In the future, I plan to write up a cross-platform project, but for now this solution has the following requirements:
 
-- An EC2 instance running Windows 2008, Windows 2008R2, or Windows 2012.
+- A 64-bit EC2 instance running Windows 2008, Windows 2008R2, or Windows 2012.
 - Powershell 3+
 - Amazon .Net SDK 
 - An IAM account to run the process
@@ -40,7 +40,7 @@ In the future, I plan to write up a cross-platform solution, but for now this so
 
 **AWS Environment Prerequisites**
 
-For this tutorial, I'll assume that you want to leverage SNS and SQS.  If not, ignore the bits about them and be sure to remove references to them from the script.
+For this tutorial, I'll assume that you do want to leverage SNS and SQS.  If not, ignore the bits about them and be sure to remove references to them from the script.  Here we go, step by step:
 
 1. Create a new SNS topic.  I called mine "AutoSnap_SNS_Log".
 2. I'm not sure if this is a bug or what, but I had to allow "Everybody" access to my SNS topic.
@@ -119,7 +119,7 @@ For this tutorial, I'll assume that you want to leverage SNS and SQS.  If not, i
 10. Download the AWS [SDK](http://aws.amazon.com/powershell) for Windows to "AWS Tools", and rename it to *AWSSDK.msi*.
 
 <br/>
-11. I like to make deployment easy and repeatable, so I created the following batch file called, "AutoSnap_Setup.bat".  It only needs to be run once on an instance and sets up the environment and installs the AWS SDK for Windows.
+11. I like to make deployment easy and repeatable, so I created the following batch file called, "AutoSnap_Setup.bat".  The purpose of this batch file is solely to configure the server environment and only needs to be run once per server instance.
 
 <br/>
 {% highlight bat %}
@@ -136,10 +136,11 @@ cmd.exe /c powershell.exe -command "& {Set-ExecutionPolicy RemoteSigned}"
 :: This next line simply installs the SDK for you. I renamed it to AWSSDK.msi because it's a more friendly name.
 cmd.exe /c msiexec.exe /i "c:\AWS Tools\AWSSDK.msi" /qn /l* "c:\AWS Tools\AWSSDK.log"
 {% endhighlight %}
-<br/>
 
-*Note*: If you already have an IAM account set up in your environmental variables for other purposes, then you'll need to modify a few things and start using stored credentials- which is a topic that is out of scope here.  Don't worry though, it's easy to implement, and the directions are [here](http://docs.aws.amazon.com/powershell/latest/userguide/specifying-your-aws-credentials.html).
 <br/>
+*Note*: If you already have an IAM account set up in your environmental variables for other purposes, then you'll need to modify a few things and start using stored credentials- which is a topic that is out of scope here.  Don't worry though, it's easy to implement, and the directions are [here](http://docs.aws.amazon.com/powershell/latest/userguide/specifying-your-aws-credentials.html).
+
+
 12. In a moment we'll create a PowerShell script (.ps1) in the same "AWS Tools" directory, *BUT FIRST* some things to customize:
 <br/>
 
@@ -147,20 +148,20 @@ cmd.exe /c msiexec.exe /i "c:\AWS Tools\AWSSDK.msi" /qn /l* "c:\AWS Tools\AWSSDK
 
 - Set your "Job Group Code".  This is a prefix you can use to designate whether this a daily, monthly, weekly, or whatever type of snapshot.  It's currently set to "STD" for "standard".
 
-- With the above two settings, and the hostname of your EC2 instance, your snapshot's "prefix" will be determined.  The defaults will create this as a snapshot description:  **HOSTNAME_AutoSnap_STD_060113**
+- With the above two settings, and the hostname of your EC2 instance, your snapshot's "prefix" will be determined.  The defaults will create this as a snapshot description:  "HOSTNAME\_AutoSnap\_STD\_060113"
 
-This is important, because the delete portion of the script will ONLY DELETE snapshots with that prefix.  This way, you 
+This is important, because the delete portion of the script will _ONLY DELETE_ snapshots with that prefix.  This way, you 
 don't have to worry about accidentally deleting snapshosts for other instances, or even one-off snapshots that you may have created manually.
 
-It ALSO opens the door for different types of rotations.  For example, you can have four scripts on the same server with different prefixes and expirations as follows:
+It _ALSO_ opens the door for different types of rotations.  For example, you can have four scripts on the same server with different prefixes and expirations as follows:
 
-HOSTNAME_AutoSnap_DAILY_060113, set to expire after 7 days
+HOSTNAME\_AutoSnap\_DAILY\_060113, set to expire after 7 days
 
-HOSTNAME_AutoSnap_WEEKLY_060113, set to expire after 14 days
+HOSTNAME\_AutoSnap\_WEEKLY\_060113, set to expire after 14 days
 
-HOSTNAME_AutoSnap_MONTHLY_060113, set to expire after 365 days
+HOSTNAME\_AutoSnap\_MONTHLY\_060113, set to expire after 365 days
 
-HOSTNAME_AutoSnap_YEARLY_060113, never expires
+HOSTNAME\_AutoSnap\_YEARLY\_060113, never expires
 
 You will be able to use Windows Task Scheduler to configure different execution timings for each script. For now, we will just start with one script called, "AutoSnap.ps1", with the following contents:
 
@@ -282,7 +283,7 @@ foreach ($volume in $volumes)
 
 <br/>
 
-##Create a snapshot##
+**Create a snapshot**
 You should now have a directory with the following contents:
 - AutoSnap.ps1
 - AutoSnap_Setup.bat
