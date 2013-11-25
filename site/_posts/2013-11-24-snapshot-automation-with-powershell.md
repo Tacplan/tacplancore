@@ -114,10 +114,13 @@ For this tutorial, I'll assume that you want to leverage SNS and SQS.  If not, i
 {% endhighlight %}
 <br/>
 9. Now let's set up our deployment directory. Create a directory called "AWS Tools".
+
 <br/>
 10. Download the AWS [SDK](http://aws.amazon.com/powershell) for Windows to "AWS Tools", and rename it to *AWSSDK.msi*.
+
 <br/>
 11. I like to make deployment easy and repeatable, so I created the following batch file called, "AutoSnap_Setup.bat".  It only needs to be run once on an instance and sets up the environment and installs the AWS SDK for Windows.
+
 <br/>
 {% highlight bat %}
 :: EC2 API Config
@@ -137,6 +140,7 @@ cmd.exe /c msiexec.exe /i "c:\AWS Tools\AWSSDK.msi" /qn /l* "c:\AWS Tools\AWSSDK
 
 *Note*: If you already have an IAM account set up in your environmental variables for other purposes, then you'll need to modify a few things and start using stored credentials- which is a topic that is out of scope here.  Don't worry though, it's easy to implement, and the directions are [here](http://docs.aws.amazon.com/powershell/latest/userguide/specifying-your-aws-credentials.html).
 <br/>
+
 12. In a moment we'll create a PowerShell script (.ps1) in the same "AWS Tools" directory, *BUT FIRST* some things to customize:
 
 - You can change the time/date stamp format.  Your needs may require the time and not just the date, for example.  The current setting will produce the following stamp for June 1st, 2013:  *060113*
