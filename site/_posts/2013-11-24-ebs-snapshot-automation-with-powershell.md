@@ -43,12 +43,19 @@ In the future, I plan to write up a cross-platform project, but for now this sol
 For this tutorial, I'll assume that you do want to leverage SNS and SQS.  If not, ignore the bits about them and be sure to remove references to them from the script.  Here we go, step by step:
 
 Create a new SNS topic.  I called mine "AutoSnap_SNS_Log". [Learn More](http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html)
+
 - I'm not sure if this is a bug or what, but I had to allow "Everybody" access to my SNS topic.
+
 Create a new SQS queue.  I called mine "AutoSnap_SQL_Log". [Learn More](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/CreatingQueue.html)
+
 Copy the ARN of the SQS queue and subscribe it to the SNS topic.
+
 Create an IAM account to use for your snapshots and call it what you like.  I chose "backupsvc". [Learn More](http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_SettingUpUser.html)
+
 - You will need to document the Access and Secret keys. [Learn More](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html)
+
 Give the IAM account permission to work with snapshots. [Learn More](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html) 
+
 
         {% highlight bash %}
         {
@@ -116,13 +123,12 @@ Give the account permission to work with SQS:
 <br/>
 Now let's set up our deployment directory. Create a directory called "AWS Tools".
 
-<br/>
 Download the AWS [SDK](http://aws.amazon.com/powershell) for Windows to "AWS Tools", and rename it to *AWSSDK.msi*.
 
-<br/>
-I like to make deployment easy and repeatable, so I created the following batch file called, "AutoSnap_Setup.bat".  The purpose of this batch file is solely to configure the server environment and only needs to be run once per server instance.
 
-<br/>
+I like to make deployment easy and repeatable, so I created the following batch file called, "AutoSnap_Setup.bat".  The purpose of this batch file is solely to configure the server environment and only needs to be run once per server instance:
+
+
         {% highlight bat %}
         :: EC2 API Config
         
@@ -137,9 +143,9 @@ I like to make deployment easy and repeatable, so I created the following batch 
         :: This next line simply installs the SDK for you. I renamed it to AWSSDK.msi because it's a more friendly name.
         cmd.exe /c msiexec.exe /i "c:\AWS Tools\AWSSDK.msi" /qn /l* "c:\AWS Tools\AWSSDK.log"
         {% endhighlight %}
-
 <br/>
-    *Note*: If you already have an IAM account set up in your environmental variables for other purposes, then you'll need to modify a few things and start using stored credentials- which is a topic that is out of scope here.  Don't worry though, it's easy to implement, and the directions are [here](http://docs.aws.amazon.com/powershell/latest/userguide/specifying-your-aws-credentials.html).
+
+> *Note*: If you already have an IAM account set up in your environmental variables for other purposes, then you'll need to modify a few things and start using stored credentials- which is a topic that is out of scope here.  Don't worry though, it's easy to implement, and the directions are [here](http://docs.aws.amazon.com/powershell/latest/userguide/specifying-your-aws-credentials.html).
 <br/>
 
 In a moment we'll create a PowerShell script (.ps1) in the same "AWS Tools" directory, *BUT FIRST* some things to customize:
